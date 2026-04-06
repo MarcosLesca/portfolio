@@ -1,0 +1,30 @@
+---
+const competencies = [
+  'Automatización de procesos',
+  'Diseño de sistemas escalables',
+  'Desarrollo de herramientas internas',
+  'Integración de APIs',
+  'Enfoque en producto / negocio',
+  'Análisis de datos'
+];
+---
+
+<section id="competencies" class="py-24 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-mono font-bold tracking-tight mb-4 uppercase">Competencias Clave</h2>
+      <p class="text-text-muted font-mono text-xs tracking-widest uppercase">Core Competencies</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {competencies.map((comp, index) => (
+        <div class="bg-bg-card border border-border hover:border-accent transition-colors p-6 flex items-start gap-4">
+          <div class="text-accent font-mono text-xl font-bold w-8">
+            {String(index + 1).padStart(2, '0')}
+          </div>
+          <span class="font-mono text-sm">{comp}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,139 @@
+---
+const stack = {
+  frontend: [
+    { name: 'Angular', icon: 'angular' },
+    { name: 'React', icon: 'react' },
+    { name: 'Next.js', icon: 'nextjs' },
+    { name: 'TypeScript', icon: 'typescript' },
+    { name: 'Tailwind CSS', icon: 'tailwindcss' },
+    { name: 'SCSS', icon: 'scss' },
+    { name: 'Vite', icon: 'vite' },
+    { name: 'Vercel', icon: 'vercel' }
+  ],
+  backend: [
+    { name: 'Django', icon: 'django' },
+    { name: 'Express', icon: 'express' },
+    { name: 'Python', icon: 'python' },
+    { name: 'PHP', icon: 'php' },
+    { name: 'Node.js', icon: 'nodejs' },
+    { name: '.NET MAUI', icon: 'dotnet' },
+    { name: 'C#', icon: 'csharp' }
+  ],
+  database: [
+    { name: 'PostgreSQL', icon: 'postgresql' },
+    { name: 'MySQL', icon: 'mysql' },
+    { name: 'Supabase', icon: 'supabase' }
+  ],
+  tools: [
+    { name: 'Docker', icon: 'docker' },
+    { name: 'Shell', icon: 'bash' },
+    { name: 'PowerShell', icon: 'powershell' },
+    { name: 'GitHub', icon: 'github' },
+    { name: 'Postman', icon: 'postman' },
+    { name: 'Cursor', icon: 'cursor' },
+    { name: 'OpenCode', icon: 'opencode' },
+    { name: 'ClaudeCode', icon: 'claude' },
+    { name: 'AWS', icon: 'aws' }
+  ]
+};
+
+// Icon mapping for special cases
+const iconMap: Record<string, string> = {
+  tailwindcss: 'tailwindcss',
+  scss: 'scss',
+  dotnet: 'dotnet',
+  csharp: 'csharp',
+  vercel: 'vercel',
+  claude: 'claude',
+  aws: 'aws'
+};
+
+const getIconPath = (icon: string): string => {
+  const mappedIcon = iconMap[icon] || icon;
+  return `/icons/${mappedIcon}.svg`;
+};
+---
+
+<section id="stack" class="py-24 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-mono font-bold tracking-tight mb-4 uppercase">Stack Tecnológico</h2>
+      <p class="text-text-muted font-mono text-xs tracking-widest uppercase">Engine Core & Tooling</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Frontend -->
+      <div class="bg-bg-card border border-border hover:border-accent transition-colors p-6">
+        <div class="flex items-center gap-2 mb-4">
+          <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span class="font-mono text-sm text-accent uppercase tracking-wider">Frontend</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          {stack.frontend.map(tech => (
+            <span class="px-3 py-1.5 bg-accent-dim border border-accent/20 text-accent font-mono text-xs uppercase flex items-center gap-1.5">
+              <img src={getIconPath(tech.icon)} alt={tech.name} class="w-4 h-4" />
+              {tech.name}
+            </span>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Backend -->
+      <div class="bg-bg-card border border-border hover:border-[#ee9800] transition-colors p-6">
+        <div class="flex items-center gap-2 mb-4">
+          <svg class="w-5 h-5 text-[#ee9800]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+          </svg>
+          <span class="font-mono text-sm text-[#ee9800] uppercase tracking-wider">Backend</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          {stack.backend.map(tech => (
+            <span class="px-3 py-1.5 bg-[#ee9800]/10 border border-[#ee9800]/20 text-[#ee9800] font-mono text-xs uppercase flex items-center gap-1.5">
+              <img src={getIconPath(tech.icon)} alt={tech.name} class="w-4 h-4" />
+              {tech.name}
+            </span>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Database -->
+      <div class="bg-bg-card border border-border hover:border-accent transition-colors p-6">
+        <div class="flex items-center gap-2 mb-4">
+          <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+          </svg>
+          <span class="font-mono text-sm text-accent uppercase tracking-wider">Database</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          {stack.database.map(tech => (
+            <span class="px-3 py-1.5 bg-accent-dim border border-accent/20 text-accent font-mono text-xs uppercase flex items-center gap-1.5">
+              <img src={getIconPath(tech.icon)} alt={tech.name} class="w-4 h-4" />
+              {tech.name}
+            </span>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Tools -->
+      <div class="bg-bg-card border border-border hover:border-[#ee9800] transition-colors p-6">
+        <div class="flex items-center gap-2 mb-4">
+          <svg class="w-5 h-5 text-[#ee9800]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span class="font-mono text-sm text-[#ee9800] uppercase tracking-wider">Tools</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          {stack.tools.map(tech => (
+            <span class="px-3 py-1.5 bg-[#ee9800]/10 border border-[#ee9800]/20 text-[#ee9800] font-mono text-xs uppercase flex items-center gap-1.5">
+              <img src={getIconPath(tech.icon)} alt={tech.name} class="w-4 h-4" />
+              {tech.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

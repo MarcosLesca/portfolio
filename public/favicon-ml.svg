@@ -1,0 +1,6 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="#0a0a0a"/>
+  <rect x="0" y="44" width="64" height="20" rx="0" fill="#22c55e"/>
+  <text x="10" y="40" font-family="monospace" font-weight="700" font-size="28" fill="#fafafa">ML</text>
+  <text x="10" y="58" font-family="monospace" font-weight="700" font-size="13" fill="#0a0a0a">dev</text>
+</svg>

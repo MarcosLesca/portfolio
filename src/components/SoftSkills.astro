@@ -1,0 +1,32 @@
+---
+const softSkills = [
+  'Trabajo en equipo',
+  'Comunicación efectiva',
+  'Resolución de problemas',
+  'Pensamiento analítico',
+  'Proactividad',
+  'Adaptabilidad',
+  'Aprendizaje continuo',
+  'Gestión del tiempo',
+  'Autonomía',
+  'Cumplimiento de objetivos'
+];
+---
+
+<section id="softskills" class="py-24 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-mono font-bold tracking-tight mb-4 uppercase">Habilidades Interpersonales</h2>
+      <p class="text-text-muted font-mono text-xs tracking-widest uppercase">Soft Skills</p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {softSkills.map(skill => (
+        <div class="bg-bg-card border border-border hover:border-accent transition-colors p-5 flex items-center gap-3">
+          <div class="w-2 h-2 bg-accent rounded-full"></div>
+          <span class="font-mono text-sm">{skill}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,80 @@
+---
+const experiences = [
+  {
+    period: '2023 — PRESENTE',
+    company: 'Agronorte (John Deere)',
+    role: 'Software Engineer (Internal Systems)',
+    description: 'Desarrollo y evolución de sistemas internos orientados a optimizar operaciones logísticas en entornos de alta demanda, priorizando escalabilidad, rendimiento y mantenibilidad.\n Desarrollo de un portal de gestión de informes y análisis de flota para clientes, incorporando visualización de rendimiento, métricas operativas y exportación de reportes personalizados, facilitando la toma de decisiones.\n Actualmente, desempeño un rol enfocado en la integración de análisis de compras con el desarrollo de herramientas internas, optimizando procesos de abastecimiento, control de stock y toma de decisiones. Colaboración transversal con áreas clave del negocio para implementar soluciones con impacto operativo.',
+    tags: ['Fullstack', 'Internal Logistics'],
+    colorClass: 'accent'
+  },
+  {
+    period: '2025 — PRESENTE',
+    company: 'LYM Desarrollo Web',
+    role: 'Full Stack Developer',
+    description: 'Desarrollo de soluciones web para clientes, abarcando el ciclo completo del producto desde la definición de requerimientos hasta la implementación. Enfoque en traducir necesidades de negocio en aplicaciones funcionales, priorizando usabilidad, rendimiento y entrega continua de valor.',
+    tags: ['Client Focused', 'UI/UX'],
+    colorClass: 'orange'
+  }
+];
+
+const getColors = (colorClass: string) => {
+  if (colorClass === 'accent') {
+    return {
+      borderL: 'border-l-accent',
+      borderAll: 'border-accent',
+      text: 'text-accent',
+      borderAlpha: 'border-accent/20'
+    };
+  }
+  return {
+    borderL: 'border-l-[#ee9800]',
+    borderAll: 'border-[#ee9800]',
+    text: 'text-[#ee9800]',
+    borderAlpha: 'border-[#ee9800]/20'
+  };
+};
+---
+
+<section id="experience" class="py-24 px-6 bg-bg-secondary">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex justify-between items-end mb-16">
+      <div>
+        <h2 class="text-4xl font-mono font-bold tracking-tight mb-4 uppercase">Timeline de Experiencia</h2>
+        <div class="w-24 h-1 bg-accent"></div>
+      </div>
+      <div class="hidden md:block">
+        <span class="font-mono text-xs text-text-muted uppercase tracking-widest">Log: Professional_History</span>
+      </div>
+    </div>
+    
+    <div class="space-y-6">
+      {experiences.map((exp) => {
+        const colors = getColors(exp.colorClass);
+        return (
+        <div class={`group bg-bg-card hover:bg-bg-card-hover transition-colors p-8 border border-border hover:${colors.borderAll} border-l-4 ${colors.borderL} grid grid-cols-1 md:grid-cols-12 gap-8`}>
+          <div class="md:col-span-3">
+            <span class={`font-mono text-sm ${colors.text}`}>
+              {exp.period}
+            </span>
+            <h3 class="text-xl font-bold mt-2">{exp.company}</h3>
+          </div>
+          <div class="md:col-span-9">
+            <h4 class="text-lg font-mono text-text mb-4 uppercase tracking-tight">{exp.role}</h4>
+            <p class="text-text-muted leading-relaxed max-w-3xl whitespace-pre-line">
+              {exp.description}
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              {exp.tags.map(tag => (
+                <span class={`bg-bg-card-hover px-3 py-1 text-[10px] font-mono ${colors.text} uppercase ${colors.borderAlpha}`}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
